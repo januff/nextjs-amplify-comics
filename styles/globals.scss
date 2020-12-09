@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'RigorMortis';
+  src: local('RigorMortis'), url(../public/RigorMortis.woff2) format('woff2');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+html,
+body {
+  background-color: silver;
+  padding: 0;
+  margin: 0;
+  font-family: 'Arbutus Slab';
+}
+
+nav {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+section {
+  display: flex;
+  min-height: 100vh;
+  // width: 50vw;
+  min-width: 300px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// How to style forms with CSS: A beginner’s guide by Supun Kavinda (3/23/20)
+// https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/
+
+input,
+label {
+  padding:10px;
+  margin: 30px 20px 20px;
+  border: 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+// CSS Button Styling Guide by Stephanie Eckles (5/6/20)
+// https://moderncss.dev/css-button-styling-guide/
+
+$btnColor: dimgray;
+$btnDisabled: red;
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button,
+input,
+label {
+  font-family: 'Permanent Marker';
+  font-size: .8rem;
+}
+
+// Reset default link styles
+a,
+input {
+  text-decoration: none;
+}
+
+// Reset default button styles
+button,
+input {
+  border: none;
+  background-color: transparent;
+  // font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
+}
+
+a,
+button,
+label,
+input {
+  // Display
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  // Visual
+  background-color: $btnColor;
+  color:whitesmoke;
+  // border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+
+  // Size
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 44px;
+
+  // Text
+  text-align: center;
+  line-height: 1.1;
+  text-transform: uppercase;
+
+  transition: 220ms all ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: scale-color($btnColor, $lightness: -20%);
+  }
+
+  // Stack Overflow: Hover and Active only when not disabled
+  // Asked 8 years, 4 months ago, Active 3 years, 3 months ago
+  // https://stackoverflow.com/a/20322132
+
+  &[disabled],
+  [disabled]:hover {
+    cursor: not-allowed;
+    background-color: scale-color($btnDisabled, $lightness: -20%);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px scale-color($btnColor, $lightness: -40%);
+  }
+}
+
+// Styling file inputs like a boss by Abdulqudus Abubakre (8/31/2020)
+// https://dev.to/ibn_abubakre/styling-file-inputs-like-a-boss-mhm
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.preview {
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 85px 30px;
+}
+
+.preview img {
+  position: absolute;
+  opacity: 1;
+  max-width: 92vw;
+  max-height: calc(100vh - 320px);
+
+  // border: 7px solid #222;
+  animation: fadeIn ease 3s;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+
+.preview svg {
+  position: absolute;
+  max-width: 90vw;
+  max-height: calc(100vh - 320px);
+  z-index: 5;
+  transition: opacity 1200ms ease-out;
+}
+
+g {
+  pointer-events: all;
+}
+
+g:hover {
+  opacity: .15;
+}
+
+.scan {
+  // font-size: 1.3em;
+  position: absolute;
+  fill: black;
+  z-index: 10;
+  padding: 25px;
+  width: 450px;
+  letter-spacing: .02em;
+}
+
+rect {
+  fill-opacity: .7;
+  fill: yellow;
+}
+
+text {
+  color: white;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

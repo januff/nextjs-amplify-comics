@@ -1,0 +1,14 @@
+{
+    "resourceName": "ds3nTranslate",
+    "convertPolicyName": "translateTextPolicyb94f53c5",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "convertType": "translateText",
+    "sourceLang": "id",
+    "targetLang": "en",
+    "access": "authAndGuest"
+}

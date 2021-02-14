@@ -65,7 +65,7 @@ export default function Home() {
           type="button" 
           value="Scan" 
           onClick={scanImage}
-          disabled={!file}
+          disabled={!file || scan}
         />
         <input 
           type="button" 

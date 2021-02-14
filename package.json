@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@astrajs/collections": "0.0.11",
     "aws-amplify": "^3.3.8",
     "axios": "^0.19.0",
     "axios-auth-refresh": "^3.0.0",

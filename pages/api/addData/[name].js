@@ -16,16 +16,13 @@ export default async (req, res) => {
   const data = [
     {
       id: 0,
-      name: "Mo Farooq",
-      username: "mofarooq32",
-      avatar: "https://i.imgur.com/9KYq7VG.png",
-      is_followed: true,
-      video: "https://i.imgur.com/FTBP02Y.mp4",
-      caption: "These ducks are MEGA cute",
-      likes: 10,
-      comments: 2,
-      timestamp: "2019-03-10T09:08:31.020Z",
-      button_visible: true,
+      name: "Netlify",
+      url: "netlify.com"
+    },
+    {
+      id: 1,
+      name: "Vercel",
+      url: "nextjs.org"
     },
   ]
   
